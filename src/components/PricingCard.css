@@ -1,0 +1,98 @@
+.pricing-card {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-top: none; /* Seamlessly connects to ServiceCard */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 126px; /* Use min-height instead of fixed height */
+  height: auto; /* Allow height to adjust */
+  padding: 16px 20px;
+  gap: 16px;
+  opacity: 1;
+  position: relative;
+  border-radius: 0 0 16px 16px; /* Only bottom corners rounded */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Ensure padding is included in dimensions */
+}
+
+.pricing-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pricing-card-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pricing-card-title h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-style: normal; 
+  font-size: 15px;
+  line-height: 22px;
+  margin: 0;
+  letter-spacing: -0.01em; 
+  color: #4b5563;
+  padding-bottom: 0;
+}
+
+.pricing-card-title a {
+  font-family: 'Inter', sans-serif; 
+  font-weight: 400; 
+  font-style: normal; 
+  font-size: 14px; 
+  line-height: 20px; 
+  letter-spacing: 0; 
+  color:#0942B3;
+
+  text-decoration: none;
+  margin: 0;
+  padding-top: 0;
+}
+
+.pricing-card-title a:hover {
+  text-decoration: underline;
+}
+
+.pricing-card-price span {
+  color: black;
+  font-family: 'Inter', sans-serif;
+  font-weight: 550; 
+  font-style: normal; 
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.create-service-btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  width: 100%;
+  background-color: #0942B3 !important;
+  color: white;
+  padding: 12px 16px; /* Add horizontal padding */
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-sizing: border-box; /* Ensure padding doesn't overflow */
+  flex-shrink: 0; /* Prevent button from shrinking */
+  margin: 0; /* Remove any default margins */
+}
+
+.plus-icon {
+  font-size: 18px;
+  font-weight: 300; 
+}

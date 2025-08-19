@@ -1,0 +1,222 @@
+.service-card {
+  width: 100%;
+  padding: 20px;
+  border-radius: 16px 16px 0 0; /* Only top corners rounded */
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid #e5e7eb;
+  border-bottom: none; /* Remove bottom border for seamless connection */
+}
+
+.service-card-container {
+  width: 100%;
+  margin: 0;
+}
+
+.service-card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-details-section {
+  margin-bottom: 16px;
+}
+
+.service-details-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.service-details-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  flex-shrink: 0;
+}
+
+.service-details-title {
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 20px;
+  color: #0942B3;
+  margin: 0 0 8px 0;
+}
+
+.service-details-content {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.5px;  
+  color: #525F7A;
+  margin: 0;
+}
+
+.additional-setting {
+  font-family: "Inter", sans-serif;
+  font-weight: 550;
+  color: #1A2031;
+  font-size: 13px;
+  margin: 0 0 4px 0;
+}
+
+.additional-setting-content {
+  font-family: "Inter", sans-serif;
+  color: #525F7A;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.additional-setting-content p {
+  margin: 0 0 4px 0;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-error {
+  background: #ef4444;
+}
+
+.status-success {
+  background: #10b981;
+}
+
+.status-warning {
+  background: #f59e0b;
+}
+
+.service-name {
+  color: #111827;
+  font-weight: 500;
+}
+
+.service-separator {
+  color: #6b7280;
+}
+
+.profile-name {
+  color: #6b7280;
+}
+
+.connecting-line {
+  position: absolute;
+  left: 4px;
+  top: 24px;
+  width: 1px;
+  height: 64px;
+  background: #e5e7eb;
+}
+
+.additional-settings-section {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.additional-settings-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.additional-settings-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6b7280;
+  flex-shrink: 0;
+}
+
+.additional-settings-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.additional-settings-content {
+  margin-left: 16px;
+}
+
+.settings-preference {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.pricing-section {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pricing-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.pricing-info h4 {
+  color: #111827;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+}
+
+.view-details-link {
+  color: #3b82f6;
+  font-size: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-details-link:hover {
+  text-decoration: underline;
+}
+
+.monthly-price {
+  font-size: 32px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.create-service-btn {
+  width: 100%;
+  height: 48px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.create-service-btn:hover {
+  background: #2563eb;
+}
+
+.create-service-icon {
+  width: 20px;
+  height: 20px;
+}
