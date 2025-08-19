@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  margin-top: 0; /* Remove top margin since sidebar starts from top */
+}
+
+.main-content {
+  margin-left: 219px; 
+  flex: 1;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+  overflow-y: auto; 
+  min-height: 100vh; 
+}
+
+.oracle-container {
+  position: relative; /* Changed from fixed to relative */
+  top: 0;
+  left: 0;
+  width: 100%; /* Changed from 100vw to 100% */
+  background-color: white;
+  z-index: 100; /* Reduced z-index so it's below sidebar */
+
+  margin: 0;
+  padding: 0;
+}
+
+/* Override the OracleDbService margin since it's now inside main-content */
+.oracle-container .top-nav,
+.oracle-container .content-header {
+  margin-left: 0 !important; /* Remove the 219px margin */
+  padding-left: 24px; /* Add proper padding instead */
+  padding-right: 24px;
+}
+
+.layout-grid {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 24px auto 0 auto;
+  padding: 0 24px; 
+  min-height: calc(100vh - 120px); 
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Remove gap between ServiceCard and PricingCard */
+  flex-shrink: 0;
+  width: 380px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  min-width: 0;
+  align-items: stretch; /* Ensure both components have same width */
+}
+
+/* ServiceCard Container - No bottom margin/border radius for seamless connection */
+.service-card-container {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 16px 16px 0 0; /* Only top corners rounded */
+
+
+  border-bottom: none; /* Remove bottom border for seamless connection */
+}
+
+/* PricingCard styling - connects seamlessly to ServiceCard */
+.pricing-card {
+  width: 100%;
+  background-color: white;
+  border-top: none; /* Remove top border for seamless connection */
+  border-radius: 0 0 16px 16px; /* Only bottom corners rounded */
+
+}
+
+/* ServiceDetailsForm styling - ensure proper spacing and alignment */
+.service-form {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  margin: 0 !important;
+  position: relative !important;
+}
+
+.maintenance-settings {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  margin: 0 !important;
+  position: relative !important;
+}
+
+.main-content *,
+.main-content .service-form *,
+.main-content .maintenance-settings *,
+.main-content .service-card-container *,
+.main-content .pricing-card * {
+  position: static !important;
+}
+
+.right-column > * {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+  clear: both !important;
+}
+
+.service-form,
+.maintenance-settings {
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  float: none !important;
+}
+
+.pricing-card {
+  overflow: visible; 
+}
+
+.pricing-card * {
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1200px) {
+  .layout-grid {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .left-column {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .right-column {
+    width: 100%;
+  }
+  
+  /* Update Oracle container padding for medium screens */
+  .oracle-container .top-nav,
+  .oracle-container .content-header {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .layout-grid {
+    gap: 16px;
+    padding: 0 16px;
+  }
+  
+  .left-column {
+    width: 100%;
+  }
+  
+  .app-container {
+    margin-top: 0; /* Remove top margin for mobile */
+  }
+  
+  .tessell-sidebar {
+    top: 0; /* Keep sidebar at top on mobile */
+  }
+  
+  /* Update Oracle container padding for mobile */
+  .oracle-container .top-nav,
+  .oracle-container .content-header {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Additional rules to prevent any overlapping */
+.right-column {
+  overflow: visible;
+}
+
+.right-column > *:first-child {
+  margin-top: 0 !important;
+}
+
+.right-column > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Ensure proper stacking context */
+.service-form {
+  z-index: 1;
+}
+
+.maintenance-settings {
+  z-index: 1;
+}
+
+/* CRITICAL: ServiceDetailsForm Complete Override */
+.right-column .service-form {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  min-height: auto !important;
+  margin: 0 !important;
+  padding: 24px !important;
+  background: #fff !important;
+  border-radius: 12px !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  z-index: 10 !important;
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  float: none !important;
+}
+
+/* Fix form layout issues */
+.service-form .form-group {
+  width: 100% !important;
+  margin-bottom: 24px !important;
+  position: relative !important;
+  display: block !important;
+}
+
+.service-form .form-row {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 16px !important;
+  margin-bottom: 24px !important;
+}
+
+@media (min-width: 768px) {
+  .service-form .form-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* Fix input and select sizing */
+.service-form .form-input,
+.service-form .form-select,
+.service-form .form-textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure proper spacing between components */
+.right-column > .service-form + .maintenance-settings {
+  margin-top: 32px !important;
+}
